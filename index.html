@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Page background color */
+      body {
+        background-color: #add8e6; /* Pale blue */
+      }
+      /* Custom styles for the calculator */
+      .calculator {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+      .calculator .value {
+        width: 100%;
+        height: 60px;
+        margin-bottom: 15px;
+        text-align: right;
+        padding-right: 20px;
+        font-size: 32px;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        border-radius: 5px;
+      }
+      .calculator .btn {
+        width: calc(25% - 8px); /* Adjust width to fit 4 buttons in a row with margins */
+        margin: 4px;
+        height: 60px;
+        font-size: 24px;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 10px;
+        cursor: pointer;
+        user-select: none;
+      }
+      .calculator .btn.clear {
+        background-color: #f44336;
+        color: #fff;
+      }
+      .calculator .btn.plus {
+        background-color: #4caf50;
+        color: #fff;
+      }
+      .calculator .btn.equal {
+        background-color: #2196f3;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Calculator form -->
+      <form class="calculator" name="calc">
+        <!-- Display input -->
+        <input type="text" class="value form-control" name="txt" readonly />
+        <!-- Calculator buttons -->
+        <div class="d-flex flex-wrap justify-content-between">
+          <button type="button" class="btn clear" onclick="document.calc.txt.value = ''">C</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '/'">/</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '*'">*</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '-'">-</button>
+          
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '7'">7</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '8'">8</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '9'">9</button>
+          <button type="button" class="btn plus" onclick="document.calc.txt.value += '+'">+</button>
+          
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '4'">4</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '5'">5</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '6'">6</button>
+          <button type="button" class="btn equal" onclick="document.calc.txt.value = eval(calc.txt.value)">=</button>
+          
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '1'">1</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '2'">2</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '3'">3</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '.'">.</button>
+          
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '0'">0</button>
+          <button type="button" class="btn btn-secondary" onclick="document.calc.txt.value += '00'">00</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
